@@ -2,6 +2,7 @@ Projecte Nebula Minecraft, per part de Nebula.
 
 # Frontend
 Per aquest projecte, el frontend es fà amb Angular.
+ - ng build --watch
 
 # Backend
 Per aquest projecte, el backend es fà amb Laravel.
