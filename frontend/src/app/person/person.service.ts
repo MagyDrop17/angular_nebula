@@ -50,7 +50,7 @@ export class PersonService {
   }
 
   delete(id: number): Observable<Person> {
-    return this.httpClient.delete<Person>(this.apiUrl + this.httpOptions)
+    return this.httpClient.delete<Person>(this.apiUrl + id, this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
@@ -66,7 +66,7 @@ export class PersonService {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     console.log(errorMessage);
-    return throwError(errorMessage);
+    return throwError(() => new Error(errorMessage));
   }
 
 }
